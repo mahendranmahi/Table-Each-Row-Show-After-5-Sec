@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML::table- Show Each Row Every 5 Seconds</title>
+    <style>
+	html,
+		
+		body {    display: table-cell;    vertical-align: middle;	}
+		.margin {  margin: 0 !important;	}
+        html,
+        body {
+            padding: 0;display: block;
+		 height: 100%;	 
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            min-height: 100%;display: block;    vertical-align: middle;
+        }
+        body {
+            color: #FFF;
+             background: url(background.jpg) no-repeat center center fixed; 
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+        }
+		.card-panel	
+		{
+			margin:0;
+			color:#000;		
+			z-index:999;
+		}
+		table.table-style-three {
+		margin:0 auto;
+		font-family: verdana, arial, sans-serif;
+		font-size: 11px;
+		color: #333333;
+		width:60%;
+		border-width: 1px;
+		border-color: #3A3A3A;
+		border-collapse: collapse;
+	}
+	table.table-style-three th {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #FFA6A6;
+		background-color: #D56A6A;
+		color: #ffffff;
+	}
+	table.table-style-three tr:hover td {
+		cursor: pointer;
+	}
+	table.table-style-three tr:nth-child(even) td{
+		background-color: #F7CFCF;
+	}
+	table.table-style-three td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #FFA6A6;
+		background-color: #ffffff;
+	}
+	#info-table tbody tr{display:none;}
+    </style>
+
+</head>
+<body>
+
+
+<div id="login-page" class="row animated zoomInUp">
+    <div class="col s12 z-depth-6 card-panel">
+        
+        <table id="info-table" class="table-style-three">
+			<thead>
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>1001</td>
+				<td>Mahendran</td>
+				<td>Mahi</td>
+			</tr>
+			<tr>
+				<td>1002</td>
+				<td>Mahilan</td>
+				<td>P</td>
+			</tr>
+			<tr>
+				<td>1003</td>
+				<td>Naveen</td>
+				<td>Kumar</td>
+			</tr>
+			<tr>
+				<td>1004</td>
+				<td>Jaya</td>
+				<td>Kumar</td>
+			</tr>
+			<tr>
+				<td>1005</td>
+				<td>Swathy</td>
+				<td>R</td>
+			</tr>
+			<tr>
+				<td>1006</td>
+				<td>Sundar</td>
+				<td>R</td>
+			</tr>
+			</tbody>
+		</table>
+			   
+    </div>
+	
+</div>
+ 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+$(document).ready(function()
+{
+   var count = $('#info-table tbody tr').length; var i=1;
+   
+	function explode(i,k){
+		setTimeout(function(){
+			$('#info-table tbody tr:nth-child('+i+')').show();
+		}, k)
+	}
+	var k=1;
+	for (var i = 1; i <= count; i++) {var k=i*5000;explode(i, k);}
+	
+});
+</script>
+</body>
+</html>
+<!--	P.Mahendran (Web Developer@chennai)- contact: webdevelopermahendran8531@gmail.com	-->
